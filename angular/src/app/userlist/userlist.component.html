@@ -1,0 +1,48 @@
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" style="width: 90rem;">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="mail">
+        <th mat-header-cell *matHeaderCellDef> Mail </th>
+        <td mat-cell *matCellDef="let element"> {{element.mail}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="url">
+        <th mat-header-cell *matHeaderCellDef> Url </th>
+        <td mat-cell *matCellDef="let element"> {{element.url}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef> Created Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.createdAt | date: 'dd/MM/yyyy'}} </td>
+      </ng-container>
+      <ng-container matColumnDef="updatedAt">
+          <th mat-header-cell *matHeaderCellDef>Updated Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.updatedAt | date: 'dd/MM/yyyy'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <mat-cell *matCellDef="let element" >
+                 <button mat-button  (click)="editButtonClicked(element._id,element.username)" >Edit</button>
+            </mat-cell>
+          </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" routerLink="/login">ClearQuote </a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link"  routerLink="/users">Users<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div> -->
+
+  <div class="" >
+      <div class="div-wrapper floatRight profileIconWidth" style="float: left;position: relative;" *ngIf="router.url !== '/login' && router.url !== '/register' ">
+      <!-- <button mat-button [matMenuTriggerFor]="menu" class="user-profile">{{id}}</button> -->
+      <span class="username"  [matMenuTriggerFor]="menu">{{id}}</span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="logout()">Sign Out</button>
+        </mat-menu>
+      </div>
+    </div>
+</nav>
