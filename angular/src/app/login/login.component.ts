@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { ReposdialogComponent } from '../reposdialog/reposdialog.component';
 import { UserserviceService } from '../userservice.service';
 import { Router } from '@angular/router';
 
@@ -20,20 +19,6 @@ export class LoginComponent implements OnInit {
       password :new FormControl('',Validators.required),
   });
   sessionStorage.setItem('isLoggedIn',"false") ;
-  }
-  openRegistrationDialog(){
-this.openDialog()
-  }
-  openDialog(): void {
-    const dialogRef = this.dialog.open(ReposdialogComponent, {
-      width: '250px',
-      data: ''
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-     // this.animal = result;
-    });
   }
 
 onClick(){

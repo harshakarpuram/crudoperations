@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, ViewChild } from '@angular/core';
 import { UserserviceService } from '../userservice.service';
 import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
-import { ReposdialogComponent } from '../reposdialog/reposdialog.component';
 import { UserData } from '../app-model';
 import { Router } from '@angular/router';
 @Component({
